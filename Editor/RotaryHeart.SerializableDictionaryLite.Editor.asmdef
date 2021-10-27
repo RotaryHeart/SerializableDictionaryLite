@@ -1,0 +1,17 @@
+{
+    "name": "RotaryHeart.SerializableDictionaryLiteEditor",
+    "references": [
+        "RotaryHeart.SerializableDictionaryLite",
+        "RotaryHeart"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

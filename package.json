@@ -1,0 +1,16 @@
+{
+  "name": "rotaryheart.serializabledictionarylite",
+  "version": "2.6.9.4",
+  "displayName": "Serialized Dictionary Lite",
+  "unity": "2018.4",
+  "description": "Serialized Dictionary is an easy to use system that allows you to have a Dictionary being serializable and editable on the inspector.\n\nThere is no limit to what to use as a Key or as a Value, other than it being a Unity serializable type.\n\nIt comes with an easy to use and friendly UI that has the following features:\n\n-Re ordering (Drag & Drop)\n-Pages System\n-Custom drawer for key or value",
+  "keywords": [
+    "serialization",
+    "dictionary",
+    "workflow"
+  ],
+  "author": "Rotary Heart",
+  "dependencies": {
+  },
+  "category": "Rotary Heart"
+}
