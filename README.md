@@ -2,6 +2,8 @@
 
 **Forum Thread:** https://forum.unity.com/threads/released-serializable-dictionary-lite-now-allowing-custom-editor-for-key-field.518178
 
+![SerializableDictionaryLite](.media/Cover.png)
+
 # About
 This repo contains a class SerializableDictionaryBase that can be inherited to be able to have a serializable dictionary.
 
