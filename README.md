@@ -12,9 +12,17 @@ For using the dictionary all you need is to create a class that inherits Seriali
 
 # Installation
 * Import the asset from the [Asset Store](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992)
+* Manually import the [.unitypackage](https://github.com/RotaryHeart/SerializableDictionaryLite/releases) via Assets > Import Package
 * Clone/Download this repository and move it to your Unity project's Assets folder
-* Via Unity Package Manager, add the following to your project packages/manifest.json:
-  * "com.rotaryheart.serializabledictionarylite" : "https://github.com/RotaryHeart/SerializableDictionaryLite.git"
+* Via Unity Package Manager
+  * Manually, add the following to your project packages/manifest.json:
+    * `"com.rotaryheart.serializabledictionarylite" : "https://github.com/RotaryHeart/SerializableDictionaryLite.git"`
+  * Automatically, open Package Manager window
+    * Click the + button
+    * Select Add package from git URL
+    * Paste `https://github.com/RotaryHeart/SerializableDictionaryLite.git`
+* Via Open UPM with the following command
+  * `openupm add com.rotaryheart.serializabledictionarylite`
 
 # Contact
 Use the Unity forum thread for any contact: https://forum.unity.com/threads/released-serializable-dictionary-lite-now-allowing-custom-editor-for-key-field.518178
