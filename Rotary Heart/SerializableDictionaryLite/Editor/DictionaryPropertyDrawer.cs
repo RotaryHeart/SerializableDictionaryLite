@@ -22,7 +22,7 @@ namespace RotaryHeart.Lib.SerializableDictionary
 
         ReorderableList list;
 
-        string title;
+        GUIContent title = new GUIContent();
 
         System.Type[] typesNative =
         {
@@ -297,7 +297,13 @@ namespace RotaryHeart.Lib.SerializableDictionary
             reqReferences.isExpanded = false;
             property.isExpanded = false;
 
-            title = label.text;
+            title.text = label.text;
+            TooltipAttribute tooltipAttribute = fieldInfo.GetCustomAttribute<TooltipAttribute>(true);
+
+            if (tooltipAttribute != null)
+            {
+                title.tooltip = tooltipAttribute.tooltip;
+            }
 
             Rect nextRect;
 
@@ -366,10 +372,17 @@ namespace RotaryHeart.Lib.SerializableDictionary
         private void List_drawHeaderCallback(Rect rect, GUIContent label)
         {
             rect.x += 6;
-
-            isExpanded.boolValue = EditorGUI.Foldout(rect, isExpanded.boolValue, "", true);
-            isExpanded.serializedObject.ApplyModifiedProperties();
-            EditorGUI.LabelField(rect, title + (Constants.ShowSize ? " [" + KeysValues.arraySize + "]" : ""));
+            title.text += (Constants.ShowSize ? " [" + KeysValues.arraySize + "]" : "");
+            
+            using (EditorGUI.ChangeCheckScope changeCheckScope = new EditorGUI.ChangeCheckScope())
+            {
+                isExpanded.boolValue = EditorGUI.Foldout(rect, isExpanded.boolValue, title, true);
+                
+                if (changeCheckScope.changed)
+                {
+                    isExpanded.serializedObject.ApplyModifiedProperties();
+                }
+            }
         }
 
         private float List_getElementHeightCallback(SerializedProperty element, int index)

@@ -12,14 +12,20 @@ namespace RotaryHeart.Lib
         public static void ApplyDefines(List<string> defines)
         {
             if (defines == null || defines.Count == 0)
+            {
                 return;
+            }
 
             string availableDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
             List<string> definesSplit = new List<string>(availableDefines.Split(';'));
 
             foreach (string define in defines)
+            {
                 if (!definesSplit.Contains(define))
+                {
                     definesSplit.Add(define);
+                }
+            }
 
             _ApplyDefine(string.Join(";", definesSplit.ToArray()));
         }
@@ -37,7 +43,9 @@ namespace RotaryHeart.Lib
             List<string> definesSplit = new List<string>(availableDefines.Split(';'));
 
             foreach (string define in defines)
+            {
                 definesSplit.Remove(define);
+            }
 
             _ApplyDefine(string.Join(";", definesSplit.ToArray()));
         }
@@ -49,7 +57,9 @@ namespace RotaryHeart.Lib
         public static bool ContainsDefine(string define)
         {
             if (string.IsNullOrEmpty(define))
+            {
                 return false;
+            }
             
             string availableDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
             List<string> definesSplit = new List<string>(availableDefines.Split(';'));
@@ -64,7 +74,9 @@ namespace RotaryHeart.Lib
         static void _ApplyDefine(string define)
         {
             if (string.IsNullOrEmpty(define))
+            {
                 return;
+            }
 
             PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, define);
         }

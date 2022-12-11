@@ -13,6 +13,14 @@ namespace RotaryHeart.Lib.SerializableDictionary
                 "RH_SerializedDictionary"
             };
             
+            if (string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath("ccdbbd5c7cb114949a686ae4fe06d208")))
+            {
+                RemoveDefines(new List<string>(1)
+                {
+                    "RH_SerializedDictionaryPro"
+                });
+            }
+
             ApplyDefines(defines);
         }
     }

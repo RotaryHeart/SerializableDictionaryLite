@@ -7,7 +7,7 @@ namespace RotaryHeart.Lib.SerializableDictionary
         const string SUPPORT_FORUM = "https://forum.unity.com/threads/released-serializable-dictionary.518178/";
         const string STORE_LINK = "https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-110992";
         const string ASSET_NAME = "Serializable Dictionary Lite";
-        const string VERSION = "2.6.10";
+        const string VERSION = "2.6.9.11";
 
         protected override string SupportForum
         {
